@@ -17,11 +17,11 @@ public:
 
 protected:
 
-	void withdraw(int geld);	//withdraw = Abheben
+	virtual void withdraw(int geld);	//withdraw = Abheben
 
 private:
 
-	int id;
+	int id;						
 	int balance = 0;
 	vector<int> history;
 

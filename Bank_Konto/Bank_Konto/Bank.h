@@ -1,5 +1,8 @@
 #pragma once
 #include "Konto.h"
+#include <string>
+#include <iostream>
+#include "Menue.h"
 using namespace std;
 
 class Bank
@@ -18,6 +21,6 @@ private:
 	void addAccount();
 	void deleteAccount(int id);
 	void manipulate(int id);
-
+	Menue menue;
 };
 
