@@ -6,6 +6,7 @@ class NormalKonto :
 public:
 	NormalKonto();
 	~NormalKonto();
-	void withdraw(int geld);
+	NormalKonto(int id);
+	bool withdraw(int geld) override;
 };
 

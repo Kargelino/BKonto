@@ -3,6 +3,8 @@
 #include <string>
 #include <iostream>
 #include "Menue.h"
+#include "Jugendkonto.h"
+#include "NormalKonto.h"
 using namespace std;
 
 class Bank

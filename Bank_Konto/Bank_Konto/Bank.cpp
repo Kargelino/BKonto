@@ -12,6 +12,20 @@ Bank::~Bank()
 
 void Bank::showMenue()
 {
+	while (true)
+	{
+		int j;
+		switch (menue.ShowMenue())
+		{
+		case 1: menue.ShowKonto(accounts);
+			j = menue.Kontoerstellen(&accounts);break;
+		case 2: menue.Kontoschlieﬂen(&accounts); break;
+		case 3: menue.Kontoeinzahlen(&accounts); break;
+		case 4: menue.Kontoauszahlen(&accounts); break;
+		case 5: menue.Ueberweisen(&accounts); break;
+		case 6: menue.ShowKontostand(&accounts); break;
+		}
+	}
+	
 
-	int i = menue.ShowMenue();
 }

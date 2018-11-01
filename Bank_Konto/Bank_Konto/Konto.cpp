@@ -37,8 +37,16 @@ int Konto::getid()
 	return this->id;
 }
 
-void Konto::withdraw(int geld)
+bool Konto::withdraw(int geld)
 {
-	this->history.push_back(-1 * geld);
-	this->balance -= geld;
+	try
+	{
+		this->history.push_back(-1 * geld);
+		this->balance -= geld;
+		return true;
+	}
+	catch (...)
+	{
+		return false;
+	}
 }
