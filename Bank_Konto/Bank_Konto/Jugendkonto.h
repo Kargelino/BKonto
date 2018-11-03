@@ -1,6 +1,7 @@
 #pragma once
 #include "Konto.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Jugendkonto :

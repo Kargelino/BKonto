@@ -17,7 +17,6 @@ int Menue::ShowMenue()
 	try
 	{
 		while (true) {
-			//system("cls");
 			cout << "\n\n________________________________________________\n";
 			cout << "\n\nHauptmen\x81 ihrer Bank !!\n\n";
 			cout << "_______________________________\n";
@@ -136,7 +135,7 @@ void Menue::Kontoauszahlen(vector<Konto*>* accounts)
 
 	for (Konto* DasKonto : *accounts) {
 		if (Knr == DasKonto->getid()) {
-			DasKonto->withdraw(Betrag);
+				DasKonto->withdraw(Betrag);	
 		}
 	}
 }

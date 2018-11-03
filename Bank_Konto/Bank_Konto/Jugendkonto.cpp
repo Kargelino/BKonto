@@ -18,23 +18,18 @@ Jugendkonto::Jugendkonto(int id)
 
 bool Jugendkonto::withdraw(int geld)
 {
-	try 
-	{
-		unsigned int i = balance;
-		if ((i -= geld) >= 0)
+	try {
+		if ((balance -= geld) < 0)
 		{
-			this->balance = i;
-			this->history.push_back(-1 * geld);
-			return true;
+			balance += geld;
+			throw "Nicht genuegend Geld";
 		}
 		else
 		{
-			return false;
+			this->history.push_back(-1 * geld);
 		}
 	}
-	catch (exception&) {
-		cout << "\n Nicht Genuegend Geld Vorhanden \n";
-		return false;
+	catch (...) {
+		cout << "Nicht genuegend Geld" << endl;
 	}
-
 }
