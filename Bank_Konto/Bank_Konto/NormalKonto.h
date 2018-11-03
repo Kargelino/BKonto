@@ -7,6 +7,6 @@ public:
 	NormalKonto();
 	~NormalKonto();
 	NormalKonto(int id);
-	bool withdraw(int geld) override;
+	void withdraw(int geld) override;
 };
 

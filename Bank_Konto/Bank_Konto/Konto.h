@@ -14,7 +14,7 @@ public:
 	int getBalance();					// getBalance = Aktueller Kontostand;
 	vector<int> getHistory();			// Kontobewegung zurückgeben
 	int getid();						// Kontonummer zurückgeben
-	virtual bool withdraw(int geld);	//withdraw = Abheben
+	virtual void withdraw(int geld);	//withdraw = Abheben
 protected:
 	int balance = 0;
 	vector<int> history;

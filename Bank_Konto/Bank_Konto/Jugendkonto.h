@@ -11,7 +11,7 @@ public:
 	Jugendkonto();
 	~Jugendkonto();
 	Jugendkonto(int id);
-	bool withdraw(int geld) override;
+	void withdraw(int geld) override;
 
 protected:
 

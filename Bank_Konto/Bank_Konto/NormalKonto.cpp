@@ -16,23 +16,15 @@ NormalKonto::NormalKonto(int id)
 	this->id = id;
 }
 
-bool NormalKonto::withdraw(int geld)
+void NormalKonto::withdraw(int geld)
 {
-	try {
-
-		if ((this->balance -= geld) < 500)
-		{
-			this->balance += geld;
-			throw "\nUeberziehungsrahmen von 500 ueberschritten";
-		}
-		else {
-			this->history.push_back(-1 * geld);
-			return true;
-		}
-	}
-	catch(...)
+	if ((this->balance -= geld) < 500)
 	{
-		cout << "\nUeberziehungsrahmen von 500 ueberschritten" << endl;
+		this->balance += geld;
+		throw "\nUeberziehungsrahmen von 500 ueberschritten";
+	}
+	else {
+		this->history.push_back(-1 * geld);
 	}
 }
 

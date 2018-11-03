@@ -132,11 +132,15 @@ void Menue::Kontoauszahlen(vector<Konto*>* accounts)
 	
 	cout << "\n\n Bitte den Betrag eingeben der vom Konto abgehoben werden soll:";
 	Betrag = einlessen();
-
-	for (Konto* DasKonto : *accounts) {
-		if (Knr == DasKonto->getid()) {
-				DasKonto->withdraw(Betrag);	
+	try {
+		for (Konto* DasKonto : *accounts) {
+			if (Knr == DasKonto->getid()) {
+				DasKonto->withdraw(Betrag);
+			}
 		}
+	}
+	catch (...) {
+		cout << "\n\n Nicht genuegend Geld am Konto" << endl;
 	}
 }
 
@@ -176,24 +180,20 @@ void Menue::Ueberweisen(vector<Konto*>* accounts)
 	cout << "\n\n Wieviel soll ueberwisen werden:";
 	Betrag = einlessen();
 
-	bool inOrdnung = false;
 	try {
 		for (Konto* konto : *accounts)
 		{
 			if (Knr1 == konto->getid())
-				inOrdnung = konto->withdraw(Betrag);
+				konto->withdraw(Betrag);
 		}
-		if (inOrdnung)
-		{
-			for (Konto* konto : *accounts)
+		for (Konto* konto : *accounts)
 			{
 				if (Knr2 == konto->getid())
 					konto->deposit(Betrag);
 			}
-		}
 	}
 	catch (...) {
-		cout << "\n\n Fehler beim Überweisen" << endl;
+		cout << "\n\n Fehler beim Überweisen, nicht genuegend Geld am Konto" << endl;
 	}
 }
 
