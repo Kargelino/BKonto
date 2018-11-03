@@ -17,7 +17,6 @@ int Menue::ShowMenue()
 	try
 	{
 		while (true) {
-			//system("cls");
 			cout << "\n\n________________________________________________\n";
 			cout << "\n\nHauptmen\x81 ihrer Bank !!\n\n";
 			cout << "_______________________________\n";
@@ -56,7 +55,12 @@ int Menue::Kontoerstellen(vector<Konto*>* accounts)
 		cout << "| 1   Jugend-Konto!	      |\n";
 		cout << "| 2   Giro-Konto!	      |\n";
 		cout << "------------------------------\n";
-		i = einlessen();
+		while(true)
+		{
+			cout << "\n Ihre Eingabe: ";
+			i = einlessen();
+			if (i >= 1 && i <= 2)break;
+		}
 		
 	while(true)
 	{
@@ -79,7 +83,7 @@ int Menue::Kontoerstellen(vector<Konto*>* accounts)
 		accounts->push_back(account);
 		cout << "\n Jugend Konto erstellt mit der Nummer: " << account->getid() << "\n\n";
 	}
-	if (i == 2) {
+	else if (i == 2) {
 		Konto* account = new NormalKonto(Knr);
 		accounts->push_back(account);
 		cout << "\n Giro Konto erstellt mit der Nummer: " << account->getid() << "\n\n";
@@ -90,6 +94,7 @@ int Menue::Kontoerstellen(vector<Konto*>* accounts)
 void Menue::Kontoschlieﬂen(vector<Konto*>* accounts)
 {
 	int kontonummer;
+	cout << "\n_______________________________\n";
 	cout << "Konto Schliessung !!\n\n";
 	cout << "_______________________________\n";
 	cout << "| Bitte Kontonummer eingeben: |\n";
@@ -98,11 +103,10 @@ void Menue::Kontoschlieﬂen(vector<Konto*>* accounts)
 	
 	int i = 0;
 	for (Konto* Account : *accounts) {
-		i++;
 		if (kontonummer == Account->getid()) {
 			accounts->erase(accounts->begin() + i);
 			cout << "\n Erfolgreich geloescht\n";
-		}
+		}i++;
 	};
 }
 
@@ -202,7 +206,7 @@ int Menue::einlessen()
 		if (cin.fail()) {
 			cin.clear();
 			cin.ignore();
-			cout << "\n Fehler bei der Eingabe, bitte geben sie eine richtige Eingabe ein";
+			cout << "\n Fehler bei der Eingabe, bitte geben sie eine richtige Eingabe ein: ";
 		}
 		else break;
 	}
