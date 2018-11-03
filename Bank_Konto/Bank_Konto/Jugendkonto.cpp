@@ -27,6 +27,7 @@ bool Jugendkonto::withdraw(int geld)
 		else
 		{
 			this->history.push_back(-1 * geld);
+			return true;
 		}
 	}
 	catch (...) {

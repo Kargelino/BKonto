@@ -177,18 +177,23 @@ void Menue::Ueberweisen(vector<Konto*>* accounts)
 	Betrag = einlessen();
 
 	bool inOrdnung = false;
-	for (Konto* konto : *accounts)
-	{
-		if (Knr1 == konto->getid())
-			inOrdnung = konto->withdraw(Betrag);
-	}
-	if (inOrdnung)
-	{
+	try {
 		for (Konto* konto : *accounts)
 		{
-			if (Knr2 == konto->getid())
-				konto->deposit(Betrag);
+			if (Knr1 == konto->getid())
+				inOrdnung = konto->withdraw(Betrag);
 		}
+		if (inOrdnung)
+		{
+			for (Konto* konto : *accounts)
+			{
+				if (Knr2 == konto->getid())
+					konto->deposit(Betrag);
+			}
+		}
+	}
+	catch (...) {
+		cout << "\n\n Fehler beim Überweisen" << endl;
 	}
 }
 
