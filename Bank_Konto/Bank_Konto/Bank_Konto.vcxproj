@@ -152,6 +152,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Bank.h" />
+    <ClInclude Include="DataService.h" />
+    <ClInclude Include="FileDataService.h" />
     <ClInclude Include="Jugendkonto.h" />
     <ClInclude Include="Konto.h" />
     <ClInclude Include="Menue.h" />
@@ -162,6 +164,8 @@
   <ItemGroup>
     <ClCompile Include="Bank.cpp" />
     <ClCompile Include="Bank_Konto.cpp" />
+    <ClCompile Include="DataService.cpp" />
+    <ClCompile Include="FileDataService.cpp" />
     <ClCompile Include="Jugendkonto.cpp" />
     <ClCompile Include="Konto.cpp" />
     <ClCompile Include="Menue.cpp" />

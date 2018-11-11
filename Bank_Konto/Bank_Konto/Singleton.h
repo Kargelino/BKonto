@@ -9,10 +9,8 @@ public:
 	void method();
 
 private:
-	Singleton();				//private constructor
+	Singleton();		
 	static bool instanceFlag;
-	static Singleton *single;
-
-
+	static Singleton* single;
 };
 

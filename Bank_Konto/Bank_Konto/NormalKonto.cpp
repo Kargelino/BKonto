@@ -14,6 +14,7 @@ NormalKonto::~NormalKonto()
 NormalKonto::NormalKonto(int id)
 {
 	this->id = id;
+	this->state = 2;
 }
 
 void NormalKonto::withdraw(int geld)

@@ -14,6 +14,7 @@ Jugendkonto::~Jugendkonto()
 Jugendkonto::Jugendkonto(int id)
 {
 	this->id = id;
+	this->state = 1;
 }
 
 void Jugendkonto::withdraw(int geld)

@@ -48,3 +48,8 @@ void Konto::withdraw(int geld)
 	{
 	}
 }
+
+int Konto::getState()
+{
+	return this->state;
+}

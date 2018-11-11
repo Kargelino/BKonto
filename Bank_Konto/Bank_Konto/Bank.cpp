@@ -12,6 +12,8 @@ Bank::~Bank()
 
 void Bank::showMenue()
 {
+	DataService *FileSystem = new FileDataService;
+	FileSystem->load(&accounts);
 	while (true)
 	{
 		int j;
@@ -25,6 +27,7 @@ void Bank::showMenue()
 		case 5: menue.Ueberweisen(&accounts); break;
 		case 6: menue.ShowKontostand(&accounts); break;
 		}
+		FileSystem->save(&accounts);
 	}
 	
 

@@ -15,10 +15,12 @@ public:
 	vector<int> getHistory();			// Kontobewegung zurückgeben
 	int getid();						// Kontonummer zurückgeben
 	virtual void withdraw(int geld);	//withdraw = Abheben
+	int getState();
 protected:
 	int balance = 0;
 	vector<int> history;
 	int id;
+	int state = 0;
 private:
 
 };

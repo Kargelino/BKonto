@@ -36,6 +36,12 @@
     <ClInclude Include="Singleton.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="DataService.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FileDataService.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -60,6 +66,12 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Singleton.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DataService.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FileDataService.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
